@@ -7,9 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'coffee-dark': '#DBA979',
-        'coffee-light': '#ECCA9C',
-        'coffee-cream': '#E8EFCF',
+        'coffee-dark': '#A79277',
+        'coffee-medium': '#D1BB9E',
+        'coffee-light': '#EAD8C0',
+        'coffee-cream': '#FFF2E1',
+        'coffee-lightgreen': '#FFF2E1',
         'coffee-green': '#AFD198',
       }
     },
