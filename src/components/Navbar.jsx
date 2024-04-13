@@ -1,24 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { CiCoffeeCup } from "react-icons/ci";
+import { BiSolidCoffeeBean } from "react-icons/bi";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = () => {
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(location.pathname);
+
     return (
-        <nav className="top-0 w-full z-50 flex items-center justify-between flex-wrap p-6 bg-coffee-green text-coffee-cream">
-            <div className="flex items-center flex-shrink-0 mr-6">
-                <span className="font-semibold text-xl tracking-tight">CoffMeUp</span>
-            </div>
-            <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                <div className="text-sm lg:flex-grow">
-                    <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-coffee-cream hover:text-white mr-4">
+        <nav className="top-0 w-full z-50 flex items-center justify-between flex-wrap bg-coffee-dark text-coffee-cream">
+            <div className="w-full block flex-grow justify-around lg:flex lg:items-center lg:w-auto satisfy-regular text-2xl">
+                <Link to="/" className={`block w-full text-center mt-4 lg:inline-block lg:mt-0 hover:text-white p-3 mr-4 border-b-2 ${activeLink === '/' ? 'border-white text-white' : 'border-coffee-dark text-coffee-cream'}`} onClick={() => setActiveLink('/')}>
+                    <div className="flex justify-center gap-2">
+                        <div className="text-3xl">
+                            <BiSolidCoffeeBean />
+                        </div>
                         Home
-                    </Link>
-                    <Link to="/recipes" className="block mt-4 lg:inline-block lg:mt-0 text-coffee-cream hover:text-white mr-4">
+                    </div>
+                </Link>
+                <Link to="/recipes" className={`block w-full text-center mt-4 lg:inline-block lg:mt-0 hover:text-white p-3 mr-4 border-b-2 ${activeLink === '/recipes' ? ' border-white text-white' : 'border-coffee-dark text-coffee-cream'}`} onClick={() => setActiveLink('/recipes')}>
+                    <div className="flex justify-center gap-2">
+                        <div className="text-3xl">
+                            <CiCoffeeCup />
+                        </div>
                         Recipes
-                    </Link>
-                    <Link to="/profile" className="block mt-4 lg:inline-block lg:mt-0 text-coffee-cream hover:text-white">
+                    </div>
+                </Link>
+                <Link to="/profile" className={`block w-full text-center mt-4 lg:inline-block lg:mt-0 p-3 hover:text-white border-b-2 ${activeLink === '/profile' ? ' border-white text-white' : 'border-coffee-dark text-coffee-cream'}`} onClick={() => setActiveLink('/profile')}>
+                    <div className="flex justify-center gap-2">
+                        <div className="text-3xl">
+                            <MdAccountCircle />
+                        </div>
                         Profile
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div>
         </nav>
     );
