@@ -1,4 +1,4 @@
-import fetchProfiles from "./festProfiles"
+import fetchProfiles from "./fetchProfiles";
 
 const addProfile = (obj) => {
     //The obj parameter should be an instance of the object created using the constructRecipe method
