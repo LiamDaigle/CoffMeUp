@@ -11,10 +11,10 @@ const ProfileCard = ({ fName, lName, favorites, tried, image }) => {
   const recipesToShow = selectedTab === 0 ? favorites : tried;
 
   return (
-    <Card raised className="w-full max-w-lg bg-coffee-dark">
+    <Card raised className="w-full bg-coffee-dark rounded-lg">
       <CardContent className="p-0">
       <Box className="p-4 text-center bg-coffee-dark">
-          <Avatar src={image} alt={`${fName} ${lName}`} className="mx-auto border-4 border-[#A79277]" sx={{ width: 90, height: 90 }} />
+          <Avatar src={image} alt={`${fName} ${lName}`} className="mx-auto border-4 border-[#A79277] rounded-full" sx={{ width: 90, height: 90 }} />
           <Typography variant="h5" className="mt-2 font-semibold text-[#A79277]">{fName} {lName}</Typography>
         </Box>
 
