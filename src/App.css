@@ -28,3 +28,27 @@ body > div {
   width: 100%;
   height: 100%;
 }
+
+div {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+}
+
+.post {
+    display: grid;
+    grid-template-areas: "a a d"
+        "b b c"
+        "b b c";
+}
+
+.post-bot {
+    grid-area: b;
+}
+
+.post-top {
+    grid-area: a;
+}
+
+.post-comments {
+    grid-area: c;
+}

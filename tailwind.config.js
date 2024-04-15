@@ -11,7 +11,7 @@ export default {
         'coffee-medium': '#D1BB9E',
         'coffee-light': '#EAD8C0',
         'coffee-cream': '#FFF2E1',
-        'coffee-lightgreen': '#FFF2E1',
+        'coffee-lightgreen': '#E8EFCF',
         'coffee-green': '#AFD198',
       }
     },
