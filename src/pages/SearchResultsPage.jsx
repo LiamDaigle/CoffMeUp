@@ -34,7 +34,7 @@ const SearchResultsPage = () => {
             {displayQuery ? <Typography>Showing Result for: {displayQuery}</Typography> : <></>}
         </div>
         <div className="grid grid-cols-2 gap-x-36 gap-y-24 mt-10">
-            {queriedRecipes.map((recipe, index) => <div key={index}><SearchResultCard title={recipe.title} image={"public/Iced White Mocha.jpg"} rating="5.0" /></div>)}
+            {queriedRecipes.map((recipe, index) => <div key={index}><SearchResultCard title={recipe.title} image={"/Iced White Mocha.jpg"} rating="5.0" /></div>)}
         </div>
     </div>
     )
