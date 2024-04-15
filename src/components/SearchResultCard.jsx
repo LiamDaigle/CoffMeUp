@@ -8,9 +8,9 @@ const SearchResultCard = ({title, image, rating}) => {
     return(
         <Card className="w-96">
             <CardMedia className="h-32" image={image}/>
-            <CardContent className="flex flex-row justify-between">
+            <CardContent className="flex flex-row justify-between bg-coffee-dark">
                 <Link to="/">
-                    <Typography className="hover:underline cursor-pointer">{title}</Typography>
+                    <Typography className="hover:underline cursor-pointer text-white">{title}</Typography>
                 </Link>
                 <div className="flex flex-row">
                     <h2 className="mr-2">{rating}</h2>
