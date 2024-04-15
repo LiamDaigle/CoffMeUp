@@ -25,7 +25,7 @@ const Profile = () => {
     },[profiles])
 
     return (
-        <div className="mt-10 w-full px-[2vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">
+        <div className="mt-10 w-full px-[2vw] py-[4vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">
             <Link to="/" className="flex items-center text-coffee-dark hover:text-coffee-green">
                 <FaArrowLeft size={20} className="inline mr-2"/>
                 <Typography variant="h6">Back to Home</Typography>

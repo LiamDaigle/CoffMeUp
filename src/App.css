@@ -16,19 +16,6 @@
     font-style: italic;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body > div {
-  width: 100%;
-  height: 100%;
-}
-
 div {
     --scroll-behavior: smooth !important;
     scroll-behavior: smooth !important;
