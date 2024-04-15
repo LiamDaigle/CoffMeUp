@@ -28,18 +28,20 @@ function App() {
   // addProfile(obj5)
   
   return (
-    <div className="h-screen w-screen">
-
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/search" element={<SearchResultsPage />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar className="w-full" />
+        {/* This wrapper ensures the content area takes up all available space */}
+        <div className="flex-grow bg-coffee-cream w-full">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/search" element={<SearchResultsPage />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

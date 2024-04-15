@@ -25,12 +25,12 @@ const Profile = () => {
     },[profiles])
 
     return (
-        <div className="mt-10">
-            <Link to="/" className="flex items-center text-coffee-cream hover:text-coffee-medium">
+        <div className="mt-10 w-full px-[2vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">
+            <Link to="/" className="flex items-center text-coffee-medium hover:text-coffee-green">
                 <FaArrowLeft size={20} className="inline mr-2"/>
                 <Typography variant="h6">Back to Home</Typography>
             </Link>
-            <div className="mt-10">
+            <div className="mt-10 px-[3vw] bg-coffee-cream">
                 {queriedProfile.map((profile, index) => (
                     <div key={index}>
                         <ProfileCard 
