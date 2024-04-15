@@ -1,49 +1,35 @@
 import React, { useState } from "react";
-import { Card, CardContent, CardMedia, Typography, Box, Avatar, Tab, Tabs, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material";
+import { Avatar } from "@mui/material";
 
 const ProfileCard = ({ fName, lName, favorites, tried, image }) => {
   const [selectedTab, setSelectedTab] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setSelectedTab(newValue);
-  };
-
   const recipesToShow = selectedTab === 0 ? favorites : tried;
 
   return (
-    <Card raised className="w-full bg-coffee-dark rounded-lg">
-        <CardContent className="p-0">
-        <Box className="flex items-center p-4 bg-coffee-dark">
-            <Avatar src={image} alt={`${fName} ${lName}`} className="border-4 border-coffee-medium rounded-full" sx={{ width: 90, height: 90 }} />
-            <Typography variant="h5" className="ml-4 font-semibold text-coffee-medium">{fName} {lName}</Typography>
-        </Box>
+    <div className="w-full bg-coffee-cream rounded-lg shadow-lg font-sedan">
+      <div className="flex items-center p-4 bg-coffee-cream">
+        <Avatar src={image} alt={`${fName} ${lName}`} className="border-4 border-coffee-medium rounded-full" sx={{ width: 90, height: 90 }} />
+        <h5 className="ml-4 font-semibold text-lg text-coffee-medium font-satisfy">{fName} {lName}</h5>
+      </div>
 
-        {/* Tabs */}
-        <Box className="border-b border-coffee-medium">
-            <Tabs value={selectedTab} onChange={handleChange} centered className="text-coffee-medium">
-            <Tab label="Favorite Recipes" className="hover:bg-coffee-light focus:bg-coffee-light" />
-            <Tab label="Tried Recipes" className="hover:bg-coffee-light focus:bg-coffee-light" />
-            </Tabs>
-        </Box>
+      {/* Tabs */}
+      <div className="border-b border-coffee-medium">
+        <div className="flex justify-center">
+          <button className={`px-4 py-2 ${selectedTab === 0 ? 'text-coffee-dark bg-coffee-light' : 'text-coffee-medium bg-coffee-cream'}`} onClick={() => setSelectedTab(0)}>Favorite Recipes</button>
+          <button className={`px-4 py-2 ${selectedTab === 1 ? 'text-coffee-dark bg-coffee-light' : 'text-coffee-medium bg-coffee-cream'}`} onClick={() => setSelectedTab(1)}>Tried Recipes</button>
+        </div>
+      </div>
 
-        {/* List of Recipes */}
-        <List sx={{ width: '100%', backgroundColor: 'coffee-cream' }}>
-            {recipesToShow.map((recipe, index) => (
-            <ListItem key={index} className="border-b border-coffee-medium">
-                <ListItemAvatar>
-                <CardMedia
-                    component="img"
-                    sx={{ width: 56, height: 56, borderRadius: '50%' }} // Assuming square images for recipes
-                    image="/Iced White Mocha.jpg" // Static image path for demonstration
-                    alt={recipe.title}
-                />
-                </ListItemAvatar>
-                <ListItemText primary={recipe.title} className="text-coffee-dark"/>
-            </ListItem>
-            ))}
-        </List>
-      </CardContent>
-    </Card>
+      {/* List of Recipes */}
+      <ul className="w-full">
+        {recipesToShow.map((recipe, index) => (
+          <li key={index} className="border-b border-coffee-medium p-2 flex items-center">
+            <img src="/Iced White Mocha.jpg" alt={recipe.title} className="w-14 h-14 rounded-full" />
+            <span className="text-coffee-dark ml-4">{recipe.title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
