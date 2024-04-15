@@ -14,22 +14,22 @@ const ProfileCard = ({ fName, lName, favorites, tried, image }) => {
     <Card raised className="w-full bg-coffee-dark rounded-lg">
       <CardContent className="p-0">
       <Box className="p-4 text-center bg-coffee-dark">
-          <Avatar src={image} alt={`${fName} ${lName}`} className="mx-auto border-4 border-[#A79277] rounded-full" sx={{ width: 90, height: 90 }} />
-          <Typography variant="h5" className="mt-2 font-semibold text-[#A79277]">{fName} {lName}</Typography>
+          <Avatar src={image} alt={`${fName} ${lName}`} className="mx-auto border-4 border-coffee-medium rounded-full" sx={{ width: 90, height: 90 }} />
+          <Typography variant="h5" className="mt-2 font-semibold text-coffee-medium">{fName} {lName}</Typography>
         </Box>
 
         {/* Tabs */}
-        <Box className="border-b border-[#D1BB9E]">
-            <Tabs value={selectedTab} onChange={handleChange} centered className="text-[#A79277]">
-                <Tab label="Favorite Recipes" className="hover:bg-[#EAD8C0] focus:bg-[#EAD8C0]" />
-                <Tab label="Tried Recipes" className="hover:bg-[#EAD8C0] focus:bg-[#EAD8C0]" />
+        <Box className="border-b border-coffee-medium">
+            <Tabs value={selectedTab} onChange={handleChange} centered className="text-coffee-medium">
+                <Tab label="Favorite Recipes" className="hover:bg-coffee-light focus:bg-coffee-light" />
+                <Tab label="Tried Recipes" className="hover:bg-coffee-light focus:bg-coffee-light" />
             </Tabs>
         </Box>
 
         {/* List of Recipes */}
-        <List sx={{ width: '100%', backgroundColor: '#FFF2E1' }}>
+        <List sx={{ width: '100%', backgroundColor: 'coffee-cream' }}>
           {recipesToShow.map((recipe, index) => (
-            <ListItem key={index} className="border-b border-[#D1BB9E]">
+            <ListItem key={index} className="border-b border-coffee-medium">
               <ListItemAvatar>
                 <CardMedia
                   component="img"
@@ -38,7 +38,7 @@ const ProfileCard = ({ fName, lName, favorites, tried, image }) => {
                   alt={recipe.title}
                 />
               </ListItemAvatar>
-              <ListItemText primary={recipe.title} />
+              <ListItemText primary={recipe.title} className="text-coffee-dark"/>
             </ListItem>
           ))}
         </List>

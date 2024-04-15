@@ -25,7 +25,7 @@ const Profile = () => {
 
     return (
         <div className="mt-10">
-            <Link to="/" className="text-coffee-cream text-left">
+            <Link to="/" className="text-coffee-cream hover:text-coffee-medium text-left">
                 <Typography variant="h6">Back to Home</Typography>
             </Link>
             <div className="mt-10">
