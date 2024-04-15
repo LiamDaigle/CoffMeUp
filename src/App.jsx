@@ -26,9 +26,9 @@ function App() {
   // const obj5 = constructProfile("Jane", "Doe", [obj1, obj2], [obj1])
   // addProfile(obj4)
   // addProfile(obj5)
-  
+
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen sedan-regular">
 
       <Router>
         <Navbar />

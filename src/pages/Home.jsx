@@ -1,10 +1,18 @@
 import React from 'react';
+import LandingPage from '../components/LandingPage';
+import Posts from '../components/Posts';
 
 
 const Home = () => {
     return (
-        <div className="">
-            <h1>HERE WE WILL HAVE HOME</h1>
+        <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
+            <section id='landing' className='snap-center'>
+                <LandingPage />
+            </section>
+
+            <section id='posts' className='snap-center'>
+                <Posts />
+            </section>
         </div>
     );
 };
