@@ -15,3 +15,27 @@
     font-weight: 400;
     font-style: italic;
 }
+
+div {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+}
+
+.post {
+    display: grid;
+    grid-template-areas: "a a d"
+        "b b c"
+        "b b c";
+}
+
+.post-bot {
+    grid-area: b;
+}
+
+.post-top {
+    grid-area: a;
+}
+
+.post-comments {
+    grid-area: c;
+}
