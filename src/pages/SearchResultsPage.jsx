@@ -33,7 +33,7 @@ const SearchResultsPage = () => {
             }} onChange={(e) => setQuery(e.target.value)} InputProps={{endAdornment:<FaMagnifyingGlass className="cursor-pointer" onClick={onSearch} size={"2.25vh"}/>, sx:{borderRadius:20, width:"25vw"}}}/>
             {displayQuery ? <Typography>Showing Result for: {displayQuery}</Typography> : <></>}
         </div>
-        <div className="grid grid-cols-2 gap-x-36 gap-y-24 mt-10">
+        <div className="grid grid-cols-2 gap-x-36 gap-y-24 mt-10 ">
             {queriedRecipes.map((recipe, index) => <div key={index}><SearchResultCard title={recipe.title} image={"/Iced White Mocha.jpg"} rating="5.0" /></div>)}
         </div>
     </div>
