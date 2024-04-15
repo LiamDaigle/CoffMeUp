@@ -19,9 +19,9 @@ const LoginModal = (props) => {
         localStorage.clear()
         
         addProfile(constructProfile(firstName, lastName, [], []))
-        addRecipe(constructRecipe("Coffee", "This is a cup of coffee", [], [], "5.0"))
-        addRecipe(constructRecipe("Iced Coffee", "This is a cup of iced coffee", [], [], "4.7"))
-        addRecipe(constructRecipe("Mocha", "This is a cup of Mocha", [], [], "4.2"))
+        addRecipe(constructRecipe("Coffee", "This is a cup of coffee", [], [], "5.0", false))
+        addRecipe(constructRecipe("Iced Coffee", "This is a cup of iced coffee", [], [], "4.7", false))
+        addRecipe(constructRecipe("Mocha", "This is a cup of Mocha", [], [], "4.2", true))
 
         props.setter(false)
     }
