@@ -9,7 +9,7 @@ const LandingPage = () => {
     };
 
     return (
-        <div className="h-screen w-screen overflow-y-scroll bg-coffee-light text-coffee-cream pt-[15vh]">
+        <div className="h-[95vh] overflow-y-scroll w-screen bg-coffee-light text-coffee-cream pt-[15vh]">
             <div className="flex flex-col sm:flex-row gap-4 ">
                 <div className="relative left-[10vw] text-[#86755f]">
                     <h1 className="text-7xl">CoffMeUp</h1>
@@ -22,7 +22,7 @@ const LandingPage = () => {
                     <img src={coffeeImage} alt="Coffee" className="w-full z-30 sm:w-auto relative" />
                 </div>
             </div>
-            <div className="w-full flex justify-center mt-[25vh]">
+            <div className="w-full flex justify-center mt-[15vh]">
                 <div className="hover:cursor-pointer" onClick={scrollToNextSection}>
                     <box-icon name='chevron-down' size="lg" color="#A79277" className="cursor-pointer"></box-icon>
                 </div>

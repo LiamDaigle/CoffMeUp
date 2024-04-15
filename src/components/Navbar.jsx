@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <nav className="top-0 w-full z-50 flex items-center justify-between flex-wrap bg-coffee-dark text-coffee-cream">
-            <div className="w-full  flex-grow justify-around flex lg:items-center lg:w-auto satisfy-regular text-2xl">
+            <div className="w-full flex-grow justify-around flex lg:items-center lg:w-auto satisfy-regular text-2xl">
                 <Link to="/" className={`block w-full text-center mt-4 lg:inline-block lg:mt-0 hover:text-white p-3 mr-4 border-b-2 ${activeLink === '/' ? 'border-white text-white' : 'border-coffee-dark text-coffee-cream'}`} onClick={() => setActiveLink('/')}>
                     <div className="flex justify-center gap-2">
                         <div className="text-3xl">
