@@ -10,7 +10,7 @@ const Home = () => {
                 <LandingPage />
             </section>
 
-            <section id='posts' className='snap-center'>
+            <section id='posts' className='snap-start'>
                 <Posts />
             </section>
         </div>

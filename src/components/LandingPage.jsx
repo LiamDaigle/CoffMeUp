@@ -9,7 +9,7 @@ const LandingPage = () => {
     };
 
     return (
-        <div className="h-[95vh] overflow-y-hidden w-screen bg-coffee-light text-coffee-cream pt-[15vh]">
+        <div className="h-screen overflow-y-hidden w-screen bg-coffee-light text-coffee-cream pt-[15vh]">
             <div className="flex flex-col sm:flex-row gap-4 ">
                 <div className="relative left-[10vw] text-[#86755f]">
                     <h1 className="text-7xl">CoffMeUp</h1>
