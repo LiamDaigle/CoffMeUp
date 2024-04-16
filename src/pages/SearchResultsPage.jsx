@@ -35,7 +35,7 @@ const SearchResultsPage = () => {
     }
     
     return (
-    <div className="flex flex-col items-center mt-10 w-screen">
+    <div className="flex flex-col p-[4vw] items-center mt-10 w-screen">
         <div className="flex flex-col justify-center items-center">
             <div className="flex flex-row justify-center items-center">
                 <TextField sx={{marginRight:"1rem"}} onKeyDown={(e) => {
