@@ -16,7 +16,7 @@ const SearchResultCard = ({title, image, rating}) => {
         <Card className="w-96">
             <CardMedia className="h-32" image={image}/>
             <CardContent className="flex flex-row justify-between bg-coffee-dark">
-                <Link onClick={onClick} to="/">
+                <Link to="/chosenRecipe" onClick={onClick}>
                     <Typography className="hover:underline cursor-pointer text-white">{title}</Typography>
                 </Link>
                 <div className="flex flex-row">
