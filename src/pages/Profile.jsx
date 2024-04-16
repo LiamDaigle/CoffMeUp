@@ -4,6 +4,7 @@ import ProfileCard from "../components/ProfileCard";
 import queryForFirstName from "../components/queryForFirstName";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 
 const Profile = () => {
@@ -24,11 +25,12 @@ const Profile = () => {
     },[profiles])
 
     return (
-        <div className="mt-10">
-            <Link to="/" className="text-coffee-cream text-left">
+        <div className="mt-10 w-full px-[2vw] py-[4vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">
+            <Link to="/" className="flex items-center text-coffee-dark hover:text-coffee-green">
+                <FaArrowLeft size={20} className="inline mr-2"/>
                 <Typography variant="h6">Back to Home</Typography>
             </Link>
-            <div className="mt-10">
+            <div className="mt-10 px-[5vw] bg-coffee-cream">
                 {queriedProfile.map((profile, index) => (
                     <div key={index}>
                         <ProfileCard 

@@ -8,7 +8,6 @@ import SearchResultsPage from './pages/SearchResultsPage';
 function App() {
   return (
     <div className="h-screen w-screen sedan-regular bg-coffee-light">
-
       <Router>
         <Navbar />
         <Routes>
