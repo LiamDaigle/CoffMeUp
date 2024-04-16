@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LandingPage from '../components/LandingPage';
 import Posts from '../components/Posts';
-import LoginModal from '../components/LoginModal';
-
+import AuthPage from '../pages/AuthPage';
 
 const Home = () => {
     
@@ -20,12 +19,21 @@ const Home = () => {
 
     return (
         <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
+            <AuthPage />
             <section id='landing' className='snap-center'>
                 <LandingPage />
             </section>
 
             <section id='posts' className='snap-start'>
                 <Posts />
+            </section>
+            
+        </div>
+    );
+};
+
+export default Home;
+
             </section>
             {invalidData ? <LoginModal open={invalidData} setter={setInvalidData}/> : <></>}
             
