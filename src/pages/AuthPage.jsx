@@ -51,9 +51,9 @@ function AuthPage(props) {
       // Call onLogin when user logs in successfully
       setIsLoggedIn(true);
       localStorage.setItem("loggedIn", "true");
-      const obj1 = constructRecipe("Coffee", "This is a cup of coffee", [], [], "5.0")
-      const obj2 = constructRecipe("Iced Coffee", "This is a cup of iced coffee", [], [], "4.7")
-      const obj3 = constructRecipe("Mocha", "This is a cup of Mocha", [], [], "4.2")
+      const obj1 = constructRecipe("Coffee", "This is a cup of coffee", ["potatoe", "matata", "matatoe"], ["jump off the roof", "Die"], "5.0")
+      const obj2 = constructRecipe("Iced Coffee", "This is a cup of iced coffee", ["tnt", "cyanide", "covidVaccine"], ["do the chacha", "cook it up", "love yourself"], "4.7")
+      const obj3 = constructRecipe("Mocha", "This is a cup of Mocha", ["matata", "matatoe"], ["jump off the roof", "have 3 kids"], "4.2")
 
       addRecipe(obj1)
       addRecipe(obj2)
