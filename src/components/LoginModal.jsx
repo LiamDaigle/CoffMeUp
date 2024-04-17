@@ -19,9 +19,9 @@ const LoginModal = (props) => {
         localStorage.clear()
         
         addProfile(constructProfile(firstName, lastName, [], []))
-        addRecipe(constructRecipe("Coffee", "This is a cup of coffee", ["potatoe", "matata", "matatoe"], ["jump off the roof", "Die"  ], "5.0", false))
-        addRecipe(constructRecipe("Iced Coffee", "This is a cup of iced coffee", ["tnt", "cyanide", "covidVaccine"], ["do the chacha", "cook it up", "love yourself"], "4.7", false))
-        addRecipe(constructRecipe("Mocha", "This is a cup of Mocha", ["matata", "matatoe"], ["jump off the roof", "have 3 kids"], "4.2", true))
+        addRecipe(constructRecipe("Coffee", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["potatoe", "matata", "matatoe"], ["jump off the roof", "Die"], "5.0", false))
+        addRecipe(constructRecipe("Iced Coffee", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["tnt", "cyanide", "covidVaccine"], ["do the chacha", "cook it up", "love yourself"], "4.7", false))
+        addRecipe(constructRecipe("Mocha", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["matata", "matatoe"], ["jump off the roof", "have 3 kids"], "4.2", true))
 
         props.setter(false)
     }
