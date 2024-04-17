@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CiStar } from 'react-icons/ci';
+import { FaStar, FaRegStar } from 'react-icons/fa'; // FontAwesome icons
 
 const RecipeCard = ({
     title,
@@ -12,8 +12,9 @@ const RecipeCard = ({
 }) => {
     const [isTried, setIsTried] = useState(tried);
     const numericRating = parseFloat(rating) || 0;
-    const filledStars = Math.max(0, Math.min(5, Math.floor(numericRating)));
-    const emptyStars = 5 - filledStars;
+    const filledStars = Math.floor(numericRating);
+    const halfStars = (Math.round(numericRating) > filledStars) ? 1 : 0;
+    const emptyStars = 5 - filledStars - halfStars;
 
     const toggleTried = () => setIsTried(!isTried);
 
@@ -24,40 +25,39 @@ const RecipeCard = ({
                     <img src={image} alt={title} className="w-full h-auto rounded-lg"/>
                 </div>
                 <div className="flex-grow p-5">
-                    <div className="flex justify-between items-center mb-4">
-                        <h1 className="text-4xl text-coffee-dark satisfy-regular">{title}</h1>
-                        <div className="text-right">
-                            <div className="flex justify-end">
-                                {[...Array(filledStars)].map((_, i) => (
-                                    <CiStar key={i} color="#6b4f4b" />
-                                ))}
-                                {[...Array(emptyStars)].map((_, i) => (
-                                    <CiStar key={i} color="#d2b48c" />
-                                ))}
-                            </div>
-                            <div className="text-sm">
-                                <span>Prep Time: 1 min</span> | 
-                                <span>Completion Time: 2 min</span> | 
-                                <span>Serving Size: 2 cups</span>
-                            </div>
-                            <button 
-                                onClick={toggleTried} 
-                                className={`mt-2 ${isTried ? 'bg-brown' : 'bg-lightbrown'} text-white py-1 px-4 rounded`}
-                            >
-                                {isTried ? 'Tried' : 'Mark as Tried'}
-                            </button>
-                        </div>
-                    </div>
                     <div className="mb-4">
-                        <h2 className="text-2xl text-coffee-dark satisfy-regular">Description</h2>
-                        <p className="text-coffee-dark sedan-regular">{description}</p>
+                        <h1 className="text-4xl text-coffee-dark satisfy-regular">{title}</h1>
+                        <div className="flex text-dark"> {/* text-dark is for filled stars color */}
+                            {[...Array(filledStars)].map((_, i) => (
+                                <FaStar key={i} size={30} />
+                            ))}
+                            {[...Array(halfStars)].map((_, i) => (
+                                <FaStar key={i} size={30} />
+                            ))}
+                            {[...Array(emptyStars)].map((_, i) => (
+                                <FaRegStar key={i} size={30} />
+                            ))}
+                        </div>
+                        <div className="text-sm mt-2 text-coffee-dark">
+                            <span>Prep Time: 1 min</span> |  
+                            <span>Completion Time: 2 min</span> |  
+                            <span>Serving Size: 2 cups</span>
+                        </div>
+                        <button 
+                            onClick={toggleTried} 
+                            className={`mt-2 ${isTried ? 'bg-coffee-brown' : 'bg-coffee-light'} text-coffe-dark py-1 px-4 rounded`}
+                        >
+                            {isTried ? 'Tried' : 'Mark as Tried'}
+                        </button>
                     </div>
+                    <h2 className="text-2xl text-coffee-dark satisfy-regular">Description</h2>
+                    <p className="text-coffee-dark sedan-regular">{description}</p>
                 </div>
             </div>
             <div className="flex flex-row">
                 <div className="w-1/2 p-5">
                     <h2 className="text-2xl text-coffee-dark satisfy-regular">Ingredients</h2>
-                    <ul className="list-disc text-coffee-dark sedan-regular">
+                    <ul className="list-disc text-coffee-dark sedan-regular px-[2vw]">
                         {ingredients.map((ingredient, index) => (
                             <li 
                                 key={index} 
@@ -70,7 +70,7 @@ const RecipeCard = ({
                 </div>
                 <div className="w-1/2 p-5">
                     <h2 className="text-2xl text-coffee-dark satisfy-regular">Steps</h2>
-                    <ol className="list-decimal text-coffee-dark sedan-regular">
+                    <ol className="list-decimal text-coffee-dark sedan-regular px-[2vw]">
                         {steps.map((step, index) => (
                             <li 
                                 key={index} 
