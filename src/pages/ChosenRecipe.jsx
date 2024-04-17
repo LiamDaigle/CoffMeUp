@@ -9,46 +9,40 @@ import updateRecipe from "../components/updateRecipe";
 import updateSelectedRecipe from "../components/updateSelectedRecipe";
 import updateCurrentProfile from "../components/updateCurrentProfile";
 
-
 const ChosenRecipe = () => {
-    const [recipe, setRecipe] = useState({}); // Initialize with an empty object
+    const [recipe, setRecipe] = useState(null);
     const [tried, setTried] = useState(false);
 
     useEffect(() => {
-        const recipeData = fetchSelectedRecipe();
-        if (recipeData.length > 0) {
-            setRecipe(recipeData[0]);
-        } else {
-            setRecipe({});
+        async function loadRecipe() {
+            const recipeData = await fetchSelectedRecipe();
+            if (recipeData && recipeData.length > 0) {
+                setRecipe(recipeData[0]);
+            }
         }
+        loadRecipe();
     }, []);
 
     useEffect(() => {
         async function checkIfTried() {
-          const currentUser = await fetchUsers();
-          const triedRecipes = currentUser[0].tried;
-    
-          const tried = triedRecipes.some(recipe => recipe.title === recipeTitle);
-          setTried(tried);
-          // if it is,  
-          if(tried) {
-            // set tried to true,  
-            recipe.tried = true;
-
-            // and add recipe in recipes collection in localstorage
-            updateRecipe(recipe.title, recipe)
-
-            // and add Recipe to tried of profiles collection in localstorage
-            updateCurrentProfile(currentUser.firstName, recipe) 
-
-            // and change tried to true in selectedRecipe collection in localstorage
-            updateSelectedRecipe(recipe);
-          }          
+            const currentUser = await fetchUsers();
+            if (currentUser && currentUser.length > 0 && currentUser[0].tried) {
+                const triedRecipes = currentUser[0].tried;
+                const tried = triedRecipes.some(r => r.title === recipe.title);
+                setTried(tried);
+                if (tried) {
+                    // Assuming deep clone or a way to avoid direct mutation
+                    const updatedRecipe = { ...recipe, tried: true };
+                    updateRecipe(recipe.title, updatedRecipe);
+                    updateCurrentProfile(currentUser[0].firstName, updatedRecipe);
+                    updateSelectedRecipe(updatedRecipe);
+                }
+            }
         }
-
-        checkIfTried();
-      }, [recipeTitle]);
-
+        if (recipe) {
+            checkIfTried();
+        }
+    }, [recipe]);
 
     if (!recipe) {
         return <div>Loading...</div>;
