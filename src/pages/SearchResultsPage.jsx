@@ -14,6 +14,8 @@ const SearchResultsPage = () => {
     const [queriedRecipes, setQueriedRecipes] = useState([])
     const [triedChecked, setTriedChecked] = useState(false)
 
+/* The `useEffect` hook in the code snippet is responsible for fetching recipes and updating the state
+based on whether the `triedChecked` state has changed. */
     useEffect(() => {
         const allRecipes = fetchRecipes()
         if(!triedChecked){
@@ -29,12 +31,19 @@ const SearchResultsPage = () => {
         }
     },[triedChecked])
 
+/**
+ * The `onSearch` function sets the display query, filters recipes based on the query title, and
+ * updates the queried recipes.
+ */
     const onSearch = () => {
         setDisplayQuery(query)
         const result = queryForTitle(query, recipes)
         setQueriedRecipes(result)
     }
     
+/* This part of the code is the JSX markup that defines the structure and layout of the
+SearchResultsPage component in a React application. Here's a breakdown of what each element is
+doing: */
     return (
     <div className="flex flex-col items-center mt-10 w-screen">
         <div className="flex flex-col justify-center mt-10 items-center">

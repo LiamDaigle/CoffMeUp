@@ -4,6 +4,14 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { BiSolidCoffeeBean } from "react-icons/bi";
 import { MdAccountCircle } from "react-icons/md";
 
+/**
+ * The Navbar component in JavaScript React manages navigation links with active styling based on the
+ * current location.
+ * @returns The Navbar component is being returned. It is a functional component that renders a
+ * navigation bar with links to Home, Recipes, and Profile pages. The active link is highlighted based
+ * on the current location using the activeLink state variable. The component uses React Router's Link
+ * component to navigate between different pages and update the active link state accordingly.
+ */
 const Navbar = () => {
     const location = useLocation();
     const [activeLink, setActiveLink] = useState(location.pathname);

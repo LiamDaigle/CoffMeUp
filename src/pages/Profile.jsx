@@ -24,6 +24,9 @@ const Profile = () => {
         }
     },[profiles])
 
+/* This part of the code is the `return` statement within the `Profile` functional component. It is
+responsible for rendering the JSX (JavaScript XML) elements that will be displayed on the screen
+when the `Profile` component is rendered. */
     return (
         <div className="mt-10 w-full px-[2vw] py-[4vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">
             <Link to="/" className="flex items-center text-coffee-dark hover:text-coffee-green">

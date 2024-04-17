@@ -8,6 +8,8 @@ const LandingPage = () => {
         nextSection.scrollIntoView({ behavior: "smooth" });
     };
 
+    /* This code snippet is defining the JSX structure for the LandingPage component in a React
+    application. Here's a breakdown of what the return statement is doing: */
     return (
         <div className="h-screen overflow-y-hidden w-screen bg-coffee-light text-coffee-cream pt-[15vh]">
             <div className="flex flex-col sm:flex-row gap-4 ">

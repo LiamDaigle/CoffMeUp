@@ -23,6 +23,8 @@ const ChosenRecipe = () => {
         loadRecipe();
     }, []);
 
+/* This `useEffect` hook is responsible for checking if the current user has already tried the selected
+recipe. Here's a breakdown of what it does: */
     useEffect(() => {
         async function checkIfTried() {
             const currentUser = await fetchUsers();
@@ -48,6 +50,9 @@ const ChosenRecipe = () => {
         return <div>Loading...</div>;
     }
 
+/* This block of code is the return statement of the `ChosenRecipe` functional component in a React
+application. It defines the JSX structure that will be rendered to the screen when this component is
+used. */
     return (
         <div className="mt-10 w-full px-[2vw] py-[4vw] bg-coffee-lightgreen min-h-screen">
             <Link to="/recipes" className="flex items-center text-coffee-dark hover:text-coffee-green">

@@ -1,5 +1,12 @@
 import fetchRecipes from "./fetchRecipes"
 
+/**
+ * The `addRecipe` function adds a recipe object to local storage if it does not already exist in the
+ * list of recipes.
+ * @param obj - An instance of the object created using the constructRecipe method.
+ * @returns If a duplicate recipe title is being added, nothing is being added and the function returns
+ * without making any changes.
+ */
 const addRecipe = (obj) => {
     //The obj parameter should be an instance of the object created using the constructRecipe method
     const recipes = fetchRecipes();
