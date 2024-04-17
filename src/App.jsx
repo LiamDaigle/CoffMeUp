@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import './App.css'
 import Profile from './pages/Profile';
 import SearchResultsPage from './pages/SearchResultsPage';
+import UploadRecipe from './pages/UploadRecipe';
 import ChosenRecipe from './pages/ChosenRecipe';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<SearchResultsPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/upload" element={<UploadRecipe />}/>
           <Route path="/chosenRecipe" element={<ChosenRecipe />} />
         </Routes>
       </Router>
