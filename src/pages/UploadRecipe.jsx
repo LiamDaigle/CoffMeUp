@@ -49,7 +49,7 @@ const UploadRecipe = () => {
         <div className="flex flex-row justify-between space-x-64">
             <div>
                 <Typography>Ingredients</Typography>
-                <div className="flex flex-row">
+                <div className="flex flex-row mb-2">
                     <TextField onChange={(e) => setCurrentIngredient(e.target.value)}/>
                     <div className="flex justify-center items-center text-black bg-coffee-medium px-4 py-2 rounded-lg hover:bg-coffee-dark hover:text-white cursor-pointer" onClick={onClickIngredient}>
                         <Typography sx={{fontSize:"1.25rem", lineHeight:"1.75rem"}}>+</Typography>
@@ -61,7 +61,7 @@ const UploadRecipe = () => {
             </div>
             <div>
                 <Typography>Steps</Typography>
-                <div>
+                <div className="flex flex-row mb-2">
                     <TextField onChange={(e) => setCurrentStep(e.target.value)}/>
                     <div className="flex justify-center items-center text-black bg-coffee-medium px-4 py-2 rounded-lg hover:bg-coffee-dark hover:text-white cursor-pointer" onClick={onClickSteps}>
                         <Typography sx={{fontSize:"1.25rem", lineHeight:"1.75rem"}}>+</Typography>
@@ -73,7 +73,7 @@ const UploadRecipe = () => {
             </div>
         </div>
         <div className="flex justify-center items-center text-black bg-coffee-medium px-4 py-2 rounded-lg hover:bg-coffee-dark hover:text-white cursor-pointer" onClick={onSubmit}>
-            Submit
+            <Typography>Submit</Typography>
         </div>
     </div>
 }
