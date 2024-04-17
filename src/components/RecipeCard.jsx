@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
+// TODO: add display if tried or not
+// TODO: add button to set if tried/not
+// TODO: add to recipe to tried of profile
+// TODO: switch tried of recipe in recipes AND in recipe in selected
+
 const RecipeCard = ({
     title,
     description,

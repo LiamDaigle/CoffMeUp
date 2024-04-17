@@ -4,10 +4,15 @@ import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import RecipeCard from "../components/RecipeCard";
+import fetchUsers from "../components/fetchUsers";
+import updateRecipe from "../components/updateRecipe";
+import updateSelectedRecipe from "../components/updateSelectedRecipe";
+import updateCurrentProfile from "../components/updateCurrentProfile";
 
 
 const ChosenRecipe = () => {
     const [recipe, setRecipe] = useState({}); // Initialize with an empty object
+    const [tried, setTried] = useState(false);
 
     useEffect(() => {
         const recipeData = fetchSelectedRecipe();
@@ -18,14 +23,36 @@ const ChosenRecipe = () => {
         }
     }, []);
 
+    useEffect(() => {
+        async function checkIfTried() {
+          const currentUser = await fetchUsers();
+          const triedRecipes = currentUser[0].tried;
+    
+          const tried = triedRecipes.some(recipe => recipe.title === recipeTitle);
+          setTried(tried);
+          // if it is,  
+          if(tried) {
+            // set tried to true,  
+            recipe.tried = true;
+
+            // and add recipe in recipes collection in localstorage
+            updateRecipe(recipe.title, recipe)
+
+            // and add Recipe to tried of profiles collection in localstorage
+            updateCurrentProfile(currentUser.firstName, recipe) 
+
+            // and change tried to true in selectedRecipe collection in localstorage
+            updateSelectedRecipe(recipe);
+          }          
+        }
+
+        checkIfTried();
+      }, [recipeTitle]);
+
+
     if (!recipe) {
         return <div>Loading...</div>;
     }
-
-    // TODO: add display if tried or not
-    // TODO: add button to set if tried/not
-    // TODO: add to recipe to tried of profile
-    // TODO: switch tried of recipe in recipes AND in recipe in selected
 
     return (
         <div className="mt-10 w-full px-[2vw] py-[4vw] bg-coffee-lightgreen min-h-screen">
@@ -41,6 +68,7 @@ const ChosenRecipe = () => {
                     steps={recipe.steps} 
                     rating={recipe.rating}
                     image={"/Iced White Mocha.jpg"}
+                    tried={tried}
                 />
             </div>
         </div>
