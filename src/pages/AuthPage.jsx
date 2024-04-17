@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../AuthPage.css'; // Assuming your CSS is saved in AuthPage.css
+import '../AuthPage.css';
 import fetchUsers from '../components/fetchUsers'; // Import fetchUsers function
 import addUser from '../components/addUser';
 import constructUser from '../components/constructUser';
@@ -43,7 +43,6 @@ function AuthPage(props) {
     // Add new user
     addUser(newUser);
     alert("you've successfully signed up!");
-    // Optionally, you can perform additional actions after signup, such as redirecting to another page
   };
 
   /**
@@ -76,7 +75,7 @@ function AuthPage(props) {
       addProfile(obj4)
       alert("you've successfully logged in");
       setTimeout(() => {
-        window.location.href = '/'; // Replace '/landing' with your actual landing page URL
+        window.location.href = '/';
       }, 1000);
     } else {
       // Handle login failure, such as displaying an error message
