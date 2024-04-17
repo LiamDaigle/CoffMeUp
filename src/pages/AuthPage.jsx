@@ -3,6 +3,10 @@ import '../AuthPage.css'; // Assuming your CSS is saved in AuthPage.css
 import fetchUsers from '../components/fetchUsers'; // Import fetchUsers function
 import addUser from '../components/addUser';
 import constructUser from '../components/constructUser';
+import constructRecipe from '../components/constructRecipe';
+import addRecipe from '../components/addRecipe';
+import constructProfile from '../components/constructProfile';
+import addProfile from '../components/addProfile';
 function AuthPage(props) {
   const [isLoginActive, setIsLoginActive] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,6 +51,16 @@ function AuthPage(props) {
       // Call onLogin when user logs in successfully
       setIsLoggedIn(true);
       localStorage.setItem("loggedIn", "true");
+      const obj1 = constructRecipe("Coffee", "This is a cup of coffee", [], [], "5.0")
+      const obj2 = constructRecipe("Iced Coffee", "This is a cup of iced coffee", [], [], "4.7")
+      const obj3 = constructRecipe("Mocha", "This is a cup of Mocha", [], [], "4.2")
+
+      addRecipe(obj1)
+      addRecipe(obj2)
+      addRecipe(obj3)
+
+      const obj4 = constructProfile(firstName, lastName, [obj1, obj2, obj3], [obj2, obj3])
+      addProfile(obj4)
       alert("you've successfully logged in");
       setTimeout(() => {
         window.location.href = '/'; // Replace '/landing' with your actual landing page URL
@@ -123,4 +137,3 @@ function AuthPage(props) {
 }
 
 export default AuthPage;
-
