@@ -1,6 +1,7 @@
 # CoffMeUp
 
 ## Table of Contents
+- [How to Run the App](#How-to-run-the-app)
 - [Project Introduction](#project-introduction)
 - [Research Challenges](#research-challenges)
 - [Hypothesis](#hypothesis)
@@ -10,6 +11,11 @@
 - [Teacher](#teacher)
 - [Course](#course)
 
+## How to Run the App
+First step is to install the dependencies using the following command:<br>
+```npm i```<br>
+Second step is to run the app in the main directory using the following command:<br>
+```npm run dev```
 ## Project Introduction
 **CoffMeUp** is designed to transform the daily coffee routine into an adventurous exploration of flavors, enhancing the coffee experience through a community-driven platform for sharing unique and exciting coffee recipes. Backed by extensive research, this application serves as a hub for coffee aficionados to discover and share diverse brewing techniques and recipes, thereby revitalizing their daily coffee rituals.
 
