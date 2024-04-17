@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import LandingPage from '../components/LandingPage';
 import Posts from '../components/Posts';
 import AuthPage from '../pages/AuthPage';
+import addProfile from '../components/addProfile';
+import addRecipe from '../components/addRecipe';
+import constructProfile from '../components/constructProfile';
+import constructRecipe from '../components/constructRecipe';
 
 const Home = () => {
     const [invalidData, setInvalidData] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
+
         const recipes = localStorage.getItem("recipes");
         const profiles = localStorage.getItem("profiles");
 

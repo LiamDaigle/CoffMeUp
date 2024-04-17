@@ -5,6 +5,7 @@ import './App.css'
 import Profile from './pages/Profile';
 import SearchResultsPage from './pages/SearchResultsPage';
 import UploadRecipe from './pages/UploadRecipe';
+import ChosenRecipe from './pages/ChosenRecipe';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/recipes" element={<SearchResultsPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/upload" element={<UploadRecipe />}/>
+          <Route path="/chosenRecipe" element={<ChosenRecipe />} />
         </Routes>
       </Router>
     </div>
