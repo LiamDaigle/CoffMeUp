@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import SearchResultCard from "../components/SearchResultCard";
 import fetchRecipes from "../components/fetchRecipes";
-import { Checkbox, TextField, Typography } from "@mui/material";
+import { Checkbox, TextField, Typography, Button } from "@mui/material";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import queryForTitle from "../components/queryForTitle";
 
 const SearchResultsPage = () => {
@@ -36,7 +37,7 @@ const SearchResultsPage = () => {
     
     return (
     <div className="flex flex-col items-center mt-10 w-screen">
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center mt-10 items-center">
             <div className="flex flex-row justify-center items-center">
                 <TextField sx={{marginRight:"1rem"}} onKeyDown={(e) => {
                     if(e.key == "Enter")
@@ -44,6 +45,9 @@ const SearchResultsPage = () => {
                 }} onChange={(e) => setQuery(e.target.value)} InputProps={{endAdornment:<FaMagnifyingGlass className="cursor-pointer" onClick={onSearch} size={"2.25vh"}/>, sx:{borderRadius:20, width:"25vw"}}}/>
                 <Typography>Show Tried: </Typography>
                 <Checkbox checked={triedChecked} onChange={(e) => setTriedChecked(e.target.checked)}/>
+                <Link className="text-black bg-coffee-medium px-4 py-2 rounded-lg hover:bg-coffee-dark hover:text-white cursor-pointer" to={"/upload"}>
+                    <Typography sx={{fontSize:"1.25rem", lineHeight:"1.75rem"}}>Add Recipe</Typography>
+                </Link>
             </div>
             {displayQuery ? <Typography>Showing Result for: {displayQuery}</Typography> : <></>}
         </div>
