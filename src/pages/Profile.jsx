@@ -1,5 +1,5 @@
-import fetchProfiles from '../components/fetchProfiles';
 import React, { useEffect, useState } from "react";
+import fetchProfiles from '../components/fetchProfiles';
 import ProfileCard from "../components/ProfileCard";
 import queryForFirstName from "../components/queryForFirstName";
 import { Typography } from "@mui/material";
@@ -8,21 +8,21 @@ import { FaArrowLeft } from "react-icons/fa";
 
 
 const Profile = () => {
-    const query = "Johna"
     const [profiles, setProfiles] = useState([])
     const [queriedProfile, setQueriedProfile] = useState([])
 
     useEffect(() => {
         const allProfiles = fetchProfiles()
-        setProfiles(allProfiles)
-    },[])
+        const user = JSON.parse(localStorage.getItem("users"))
+        const query = user[0].firstName
 
-    useEffect(() => {
-        if(profiles.length > 0){
-            const result = queryForFirstName(query, profiles)
-            setQueriedProfile(result)
-        }
-    },[profiles])
+        console.log(query)
+
+        // setProfiles(allProfiles)
+        
+        const result = queryForFirstName(query, allProfiles)
+        setQueriedProfile(result)
+    },[])
 
     return (
         <div className="mt-10 w-full px-[2vw] py-[4vw] pb-[10vh] bg-coffee-lightgreen min-h-screen">

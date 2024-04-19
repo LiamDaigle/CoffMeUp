@@ -364,7 +364,7 @@ input::placeholder {
  */
 @media screen and (max-width: 990px) {
   .user_options-forms {
-    min-height: 350px;
+    min-height: 450px;
   }
   .user_options-forms .forms_buttons {
     -webkit-box-orient: vertical;

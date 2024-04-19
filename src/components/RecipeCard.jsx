@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
+import fetchRecipes from './fetchRecipes';
+import updateRecipe from './updateRecipe';
+import constructRecipe from './constructRecipe';
 
 // TODO: add display if tried or not
 // TODO: add button to set if tried/not
@@ -20,7 +23,14 @@ const RecipeCard = ({
     const filledStars = Math.floor(numericRating);
     const emptyStars = 5 - filledStars;
 
-    const toggleTried = () => setIsTried(!isTried);
+    useEffect(() => {
+        
+    }, [])
+
+    const toggleTried = () => {
+        updateRecipe(title, constructRecipe(title, description, ingredients, steps, rating, !isTried))
+        setIsTried(!isTried)
+    };
 
     return (
         <div className="flex flex-col">
