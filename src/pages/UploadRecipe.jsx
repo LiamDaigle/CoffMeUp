@@ -16,6 +16,10 @@ const UploadRecipe = () => {
     const [currentStep, setCurrentStep] = useState("")
     const navigate = useNavigate()
 
+/**
+ * The onClickIngredient function adds the current ingredient to the list of ingredients and clears the
+ * input field for the next ingredient.
+ */
     const onClickIngredient = () => {
 
         const oldIngredients = ingredients;
@@ -24,6 +28,9 @@ const UploadRecipe = () => {
         setCurrentIngredient("")
     }
 
+/**
+ * The onClickSteps function adds the currentStep to the steps array and then clears the currentStep.
+ */
     const onClickSteps = () => {
         const oldSteps = steps;
         oldSteps.push(currentStep)
@@ -31,12 +38,18 @@ const UploadRecipe = () => {
         setCurrentStep("")
     }
 
+/**
+ * The onSubmit function constructs a new recipe object, adds it to the list of recipes, and navigates
+ * to the "/recipes" page.
+ */
     const onSubmit = () => {
         const newRecipe = constructRecipe(title, description, ingredients, steps, "5.0", false)
         addRecipe(newRecipe)
         navigate("/recipes")
     }
 
+    /* This code snippet is defining the UI layout for an upload recipe form in a React component.
+    Here's a breakdown of what it's doing: */
     return <div className="flex flex-col items-center justify-center mt-14 h-3/4">
         <div className="flex flex-col items-center justify-center">
             <Typography>Recipe Title</Typography>

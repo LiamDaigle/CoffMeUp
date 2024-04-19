@@ -37,6 +37,8 @@ const Home = () => {
         localStorage.removeItem("loggedIn");
     };
 
+    /* The `return` statement in the `Home` component is returning JSX code that represents the
+    structure of the component's UI. Here's a breakdown of what the JSX code is doing: */
     return (
         <div className="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
             {!isLoggedIn && (

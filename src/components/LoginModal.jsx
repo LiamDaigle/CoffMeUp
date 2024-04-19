@@ -26,6 +26,9 @@ const LoginModal = (props) => {
         props.setter(false)
     }
 
+    /* This code snippet is defining a React component called `LoginModal`. The component renders a
+    dialog box with a title "Login" and content that includes two text fields for entering first
+    name and last name, a login button, and a message area for displaying error messages. */
     return <Dialog className="flex flex-col justify-center items-center" open={props.open} onClose={(event, reason) => {
         if(reason && reason === "backdropClick")
             return;

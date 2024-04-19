@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../AuthPage.css'; // Assuming your CSS is saved in AuthPage.css
+import '../AuthPage.css';
 import fetchUsers from '../components/fetchUsers'; // Import fetchUsers function
 import addUser from '../components/addUser';
 import constructUser from '../components/constructUser';
@@ -19,6 +19,14 @@ function AuthPage(props) {
     setIsLoginActive(!isLoginActive);
   };
 
+/**
+ * The `handleSignUp` function in JavaScript React handles user sign up by checking for duplicate
+ * emails and adding new users to the system.
+ * @returns If a user with the same email already exists, a warning message "User with this email
+ * already exists." will be logged to the console. The function will then return and not proceed with
+ * adding the new user. If there is no duplicate user, the new user will be added, and an alert saying
+ * "you've successfully signed up!" will be displayed.
+ */
   const handleSignUp = (e) => {
     e.preventDefault();
 
@@ -35,9 +43,13 @@ function AuthPage(props) {
     // Add new user
     addUser(newUser);
     alert("you've successfully signed up!");
-    // Optionally, you can perform additional actions after signup, such as redirecting to another page
   };
 
+  /**
+   * The `handleLogin` function checks if the provided email and password match any existing user, logs
+   * the user in if successful, and adds sample recipes and a profile before redirecting to the landing
+   * page.
+   */
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -63,7 +75,7 @@ function AuthPage(props) {
       addProfile(obj4)
       alert("you've successfully logged in");
       setTimeout(() => {
-        window.location.href = '/'; // Replace '/landing' with your actual landing page URL
+        window.location.href = '/';
       }, 1000);
     } else {
       // Handle login failure, such as displaying an error message
@@ -71,6 +83,8 @@ function AuthPage(props) {
     }
   };
 
+  /* This `return` statement in the `AuthPage` component is responsible for rendering the user
+  interface for the authentication page. Here's a breakdown of what it does: */
   return (
     <section className="user">
       <div className="user_options-container">
